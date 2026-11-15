@@ -58,4 +58,8 @@ Demi keamanan dan integritas repositori, seluruh informasi sensitif telah dihapu
 ### 2. Reprodusibilitas Data & Grafik (`feeds.csv`)
 1. File `feeds.csv` diunduh langsung dari menu **Data Import / Export** pada channel ThingSpeak.
 2. Dataset mencakup **28.372 baris data** (`entry_id` 1 s.d. 28.372) dari tanggal **5 November 2026 pukul 20:14 WIB** hingga **15 November 2026 pukul 22:57 WIB** (durasi >10 hari) dengan interval rata-rata ~30,8 detik dan tanpa nilai kosong (*0 missing values*).
-3. Kolom `field1` merepresentasikan nilai mentah ADC 12-bit (0–4095) yang dapat langsung diolah menggunakan Microsoft Excel, Google Sheets, atau Python (`pandas` & `matplotlib`) untuk menghasilkan kembali statistik harian maupun grafik deret waktu (*time-series*).
+3. Kolom `field1` merepresentasikan nilai me
+4.ntah ADC 12-bit (0–4095) yang dapat langsung diolah menggunakan Microsoft Excel, Google Sheets, atau Python (`pandas` & `matplotlib`) untuk menghasilkan kembali statistik harian maupun grafik deret waktu (*time-series*).
+
+## Grafik Hasil Pengukuran
+![Grafik Analisis MQ-135](analisis_mq135.png)
