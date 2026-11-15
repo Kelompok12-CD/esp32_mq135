@@ -62,10 +62,29 @@ Demi keamanan dan integritas repositori, seluruh informasi sensitif telah dihapu
 4.ntah ADC 12-bit (0–4095) yang dapat langsung diolah menggunakan Microsoft Excel, Google Sheets, atau Python (`pandas` & `matplotlib`) untuk menghasilkan kembali statistik harian maupun grafik deret waktu (*time-series*).
 
 ## Grafik Hasil Pengukuran
+## Grafik & Hasil Analisis Data (`analisis_data.py`)
 
 ![Grafik Analisis MQ-135](analisis_mq135.png)
 
-### Ringkasan Hasil Pengamatan Grafik
-- **Kondisi Udara Normal (*Baseline*):** Selama periode pemantauan 5–15 November 2026 (28.372 entri), pembacaan dasar sensor MQ-135 berada di rentang stabil sekitar **166 hingga 413 ADC**, yang menunjukkan kondisi kualitas udara ruangan dalam keadaan normal.
-- **Lonjakan Sesaat (*Spike*):** Terdeteksi beberapa kali lonjakan nilai hingga mencapai batas maksimum **4.095 ADC** (terutama pada tanggal 5, 6, 7, 9, dan 15 November 2026) yang mengindikasikan adanya paparan gas atau asap sesaat di sekitar sensor, sebelum akhirnya kembali turun ke tingkat *baseline*.
-- **Stabilitas Rata-rata Harian:** Grafik batang hijau menunjukkan rata-rata harian konsisten di kisaran **226–413 ADC** dengan tren yang semakin stabil setelah fase pemanasan awal (*burn-in/preheating*) sensor pada dua hari pertama.
+### Tabel Statistik Harian Sensor MQ-135 (WIB)
+
+Hasil pengolahan 28.372 entri dari `feeds.csv` menggunakan skrip `analisis_data.py`:
+
+| Tanggal (WIB) | Jumlah Data (`count`) | Rata-rata (`mean`) | Median | Minimum (`min`) | Maksimum (`max`) | Standar Deviasi (`std`) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| 2026-11-05 | 439 | 406,41 | 391,0 | 351 | 3.647 | 165,97 |
+| 2026-11-06 | 2.809 | 413,42 | 397,0 | 305 | 3.909 | 138,54 |
+| 2026-11-07 | 2.806 | 367,67 | 351,0 | 279 | 2.858 | 81,73 |
+| 2026-11-08 | 2.809 | 334,28 | 325,0 | 272 | 1.296 | 54,17 |
+| 2026-11-09 | 2.809 | 306,56 | 293,0 | 208 | 4.095 | 93,93 |
+| 2026-11-10 | 2.786 | 258,65 | 250,0 | 208 | 1.246 | 41,15 |
+| 2026-11-11 | 2.809 | 226,94 | 223,0 | 182 | 481 | 24,53 |
+| 2026-11-12 | 2.808 | 240,05 | 233,0 | 166 | 543 | 39,56 |
+| 2026-11-13 | 2.807 | 227,10 | 226,0 | 170 | 1.499 | 36,61 |
+| 2026-11-14 | 2.806 | 226,90 | 215,0 | 176 | 598 | 35,37 |
+| 2026-11-15 | 2.684 | 249,37 | 230,0 | 166 | 4.095 | 110,60 |
+
+### Penjelasan Hasil Pengamatan
+- **Kondisi Udara Normal (*Baseline*):** Pembacaan dasar sensor berada di rentang stabil **166 hingga 413,42 ADC** dengan median harian **215,0–397,0 ADC**, menunjukkan kondisi kualitas udara ruangan normal[cite: 6].
+- **Lonjakan Sesaat (*Spike*):** Terdeteksi lonjakan hingga batas maksimum ADC **4.095** pada tanggal 9 dan 15 November 2026 (serta 3.647–3.909 pada 5–6 November 2026) akibat paparan gas/asap sesaat sebelum kembali turun ke *baseline*[cite: 6].
+- **Stabilitas Pembacaan:** Setelah fase pemanasan awal (*preheating*) pada 5–6 November 2026, nilai standar deviasi harian turun signifikan dari **165,97** menjadi kisaran **24,53–39,56** pada 11–14 November 2026, menandakan sensor bekerja sangat stabil[cite: 6].
