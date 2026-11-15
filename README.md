@@ -62,4 +62,10 @@ Demi keamanan dan integritas repositori, seluruh informasi sensitif telah dihapu
 4.ntah ADC 12-bit (0–4095) yang dapat langsung diolah menggunakan Microsoft Excel, Google Sheets, atau Python (`pandas` & `matplotlib`) untuk menghasilkan kembali statistik harian maupun grafik deret waktu (*time-series*).
 
 ## Grafik Hasil Pengukuran
+
 ![Grafik Analisis MQ-135](analisis_mq135.png)
+
+### Ringkasan Hasil Pengamatan Grafik
+- **Kondisi Udara Normal (*Baseline*):** Selama periode pemantauan 5–15 November 2026 (28.372 entri), pembacaan dasar sensor MQ-135 berada di rentang stabil sekitar **166 hingga 413 ADC**, yang menunjukkan kondisi kualitas udara ruangan dalam keadaan normal.
+- **Lonjakan Sesaat (*Spike*):** Terdeteksi beberapa kali lonjakan nilai hingga mencapai batas maksimum **4.095 ADC** (terutama pada tanggal 5, 6, 7, 9, dan 15 November 2026) yang mengindikasikan adanya paparan gas atau asap sesaat di sekitar sensor, sebelum akhirnya kembali turun ke tingkat *baseline*.
+- **Stabilitas Rata-rata Harian:** Grafik batang hijau menunjukkan rata-rata harian konsisten di kisaran **226–413 ADC** dengan tren yang semakin stabil setelah fase pemanasan awal (*burn-in/preheating*) sensor pada dua hari pertama.
